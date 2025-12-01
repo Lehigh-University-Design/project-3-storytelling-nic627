@@ -1,0 +1,52 @@
+/*Font*/
+@font-face {
+  font-family: "Asphaltic";
+  src: url("/fonts/Asphaltic.ttf") format("truetype");
+  font-weight: normal;
+  font-style: normal;
+}
+
+
+
+/* ================================
+   AWARENESS – FULL SCREEN WARNING
+   ================================ */
+
+.awareness-wrapper {
+  position: fixed;
+  inset: 0;
+  background: #b00000;
+  z-index: 99999;
+}
+
+.danger-panel {
+  height: 100vh;
+  background: red;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+/* ================================
+   WORD STACK LAYOUT
+   ================================ */
+
+.words-layout {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 12px;
+}
+
+/* ================================
+   TYPEWRITER WORD STYLE
+   ================================ */
+
+.typeword {
+  font-family: "Asphaltic", sans-serif;
+  font-weight: 900;
+  letter-spacing: 4px;
+  min-height: 1em;
+  line-height: 1;
+}
+

@@ -1,0 +1,209 @@
+@import url("https://fonts.googleapis.com/css2?family=Poppins:wght@500;600;700&display=swap");
+
+
+
+@font-face {
+  font-family: "Asphaltic";
+  src: url("/fonts/Asphaltic.ttf") format("truetype");
+  font-weight: normal;
+  font-style: normal;
+}
+
+.support-page {
+  position: fixed;
+  inset: 0;
+  overflow-y: auto;
+  overflow-x: hidden;
+
+  /*  TRUE SOLID BASE LAYER ) */
+  background-color: #f0cfff;
+
+  /*  IMAGE ON TOP OF THE SOLID BASE */
+  background-image: 
+    linear-gradient(rgba(188, 255, 209, 0.85), rgba(246, 153, 255, 0.85)),
+    url("https://images.saymedia-content.com/.image/t_share/MTkyOTkyMzE2OTQ3MjQ0MjUz/website-background-templates.jpg");
+
+  background-size: cover;
+  background-position: center;
+  background-repeat: no-repeat;
+
+
+  display: flex;
+  justify-content: center;
+
+  padding: clamp(64px, 8vw, 160px);
+  color: #0f172a;
+
+  z-index: 999999;              /*  ABOVE EVERYTHING */
+  isolation: isolate;          /*  HARD CSS ISOLATION */
+  pointer-events: auto;
+
+  backface-visibility: hidden;
+  transform: translateZ(0);
+}
+
+
+
+.support-wrapper {
+  width: 100%;
+  max-width: 1200px;
+  min-height: 200vh;   /*  makes THIS page long */
+  text-align: center;
+}
+
+
+.support-title {
+  font-family: "Asphaltic", sans-serif;
+  font-size: clamp(2.6rem, 5vw, 4rem);
+  color: rgb(60, 171, 101);
+  letter-spacing: 0.04em;
+  margin-bottom: 14px;
+  text-transform: uppercase;
+}
+
+.support-subtitle {
+  font-family: system-ui, -apple-system, BlinkMacSystemFont, "Segoe UI", sans-serif;
+  max-width: 760px;
+  margin: 0 auto 48px auto;
+  font-size: clamp(1.05rem, 1.6vw, 1.3rem);
+  line-height: 1.7;
+  opacity: 0.9;
+}
+
+
+/*   Responsive Infographic Grid */
+.support-grid {
+  display: grid;
+  grid-template-columns: repeat(2, 1fr);  /*  FORCE 2 COLUMNS */
+  gap: clamp(20px, 3vw, 40px);
+  margin-bottom: 64px;
+  width: 100%;
+}
+
+
+.support-card {
+  background: white;
+  border-radius: 18px;
+  padding: clamp(26px, 4vw, 44px);
+  box-shadow: 0 20px 60px rgba(0, 0, 0, 0.12);
+
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: space-between;   /*  EVEN VERTICAL DISTRIBUTION */
+
+  min-height: 360px;                /*  ALL CARDS SAME HEIGHT */
+  gap: 14px;
+
+  transition: transform 0.25s ease;
+}
+
+
+.support-card:hover {
+  transform: translateY(-8px);
+}
+
+.support-card h2 {
+  font-size: 1.35rem;
+  margin-top: 8px;
+}
+
+.support-card p {
+  font-size: 0.95rem;
+  opacity: 0.8;
+  line-height: 1.5;
+  max-width: 260px;
+}
+
+.support-card a {
+  margin-top: 10px;
+  color: #2563eb;
+  text-decoration: none;
+  font-size: 20px;
+  font-family: "Poppins", sans-serif;
+}
+
+/*   ICON STYLING */
+.support-icon {
+  font-size: clamp(32px, 4vw, 48px);
+  color: #2563eb;
+}
+
+/*   URGENT CARD HIGHLIGHT */
+/* .support-card.urgent {
+  border: 2px solid #dc2626;
+} */
+
+.support-card.urgent .support-icon {
+  color: #dc2626;
+  
+}
+
+.support-card.urgent a {
+  font-family: "Poppins", sans-serif;
+  color: #dc2626;
+  font-size: 20px;
+}
+
+/*   BACK BUTTON */
+.support-back {
+  margin-top: 10px;
+  font-family: "Poppins", sans-serif;
+  padding: 12px 26px;
+  font-size: 16px;
+  background: normal ;
+  color: #0f172a;
+  border: 2px solid #ffffff;
+  border-radius: 999px;
+  cursor: pointer;
+  transition: background 0.25s ease, transform 0.25s ease;
+}
+
+.support-back:hover {
+  background: rgba(255, 255, 255, 0.05);
+  transform: translateY(-2px);
+}
+
+.ribbon-icon {
+  font-size: 0.9em;
+  margin-right: 14px;
+  color: #a855f7;  /* awareness prple + green  */
+  vertical-align: middle;
+}
+
+/*   Card title font */
+.support-card h2 {
+  font-family: "Poppins", sans-serif;
+  font-size: 30px;
+  font-weight: 600;
+  letter-spacing: 0.02em;
+}
+
+
+.support-card p {
+  font-family: "Segoe UI", system-ui, -apple-system, BlinkMacSystemFont, sans-serif;
+  font-size: 20px;
+  opacity: 0.85;
+  line-height: 1.55;
+  max-width: 260px;
+}
+
+/*  FORCE ALL CARD TITLES TO BE VISUALLY EVEN */
+.support-card h2 {
+  font-family: "Poppins", sans-serif;
+  font-size: 28px;
+  font-weight: 600;
+  letter-spacing: 0.02em;
+  text-align: center;
+
+  /*  This is the key part */
+  min-height: 72px;        /* forces equal height */
+  display: flex;
+  align-items: center;    /* vertically centers text */
+  justify-content: center;
+
+  margin: 8px 0 4px 0;    /* consistent spacing */
+  line-height: 1.2;
+}
+
+

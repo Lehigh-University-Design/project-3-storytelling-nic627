@@ -16,7 +16,7 @@ export default function ChatBox({ message, onTypingComplete }) {
       if (index < message.length) {
         setTimeout(type, 35);
       } else {
-        onTypingComplete(true); // ✅ unlock buttons when done
+        onTypingComplete(true); //   unlock buttons when done
       }
     };
 

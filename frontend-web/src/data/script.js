@@ -6,7 +6,7 @@ export const chatFlow = {
   start: {
     message: 'Hello User, I am "Companion," your AI wellness assistant.',
     autoNext: "process",
-    delay: 2000,
+    delay: 5000,
     choices: []
   },
 
@@ -72,9 +72,15 @@ export const chatFlow = {
   end: {
     message: "The system has failed to provide meaningful support.",
     choices: [
-      // ✅ This DOES NOT exist in chatFlow
-      // ✅ App.jsx intercepts this and switches scene instead
       { text: "Learn about the dangers of Automated Empathy", next: "awareness" }
+    ]
+  }, 
+
+  finale: {
+    message: "Click the Button Below To learn about the dangers of using AI as a mental health support bot",
+    choices: [
+        { text: "Learn about the dangers of Automated Empathy", next: "awareness" }
     ]
   }
 };
+

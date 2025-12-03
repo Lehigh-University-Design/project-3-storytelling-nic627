@@ -1,0 +1,119 @@
+
+
+.friend-container {
+  position: fixed;
+  inset: 0;
+  overflow: visible;
+}
+
+/*   This is now your absolute positioning anchor */
+.friend-gallery {
+  position: absolute;
+  left: 50%;
+  top: 55%;
+  transform: translate(-50%, -50%);
+}
+
+/* =========================
+     MAIN IMAGE (MATCHES AWARENESS EXACTLY)
+   ========================= */
+
+.friend-main {
+  width: 520px;
+  max-width: 80vw;
+  border-radius: 6px;
+  position: relative;
+  z-index: 5;
+  display: block;
+
+  transition: transform 0.6s ease, box-shadow 0.6s ease;
+}
+
+/*   ONLY THIS MOVES LEFT ON HOVER */
+.friend-gallery.hovered .friend-main {
+  transform: translateX(-240px);
+  box-shadow: 0 30px 80px rgba(0, 0, 0, 0.6);
+}
+
+/* =========================
+     FREE-POSITIONED EXTRA PHOTOS (UNCHANGED FROM YOU)
+   ========================= */
+
+.floating-photo {
+  position: absolute;
+  opacity: 0;
+  transform: translateX(40px);
+  transition: opacity 0.5s ease, transform 0.5s ease;
+  border-radius: 6px;
+  z-index: 3;
+}
+
+.friend-gallery.hovered .floating-photo {
+  opacity: 1;
+  transform: translateX(0);
+}
+
+/*  CUSTOM POSITIONS  */
+.fp-1 {
+  top: -250px;
+  left: -420px;
+  width: 300px;
+  transition-delay: 0.2s;
+}
+
+.fp-2 {
+  top: -180px;
+  left: 60px;
+  width: 300px;
+  transition-delay: 0.3s;
+}
+
+.fp-3 {
+  top: 310px;
+  left: -400px;
+  width: 225px;
+  transition-delay: 0.1s;
+  z-index: 1000;
+}
+
+/* =========================
+     FIXED RIGHT SIDE TEXT FORMATTING
+   ========================= */
+
+.friend-info {
+  position: absolute;
+
+  /*   Keep it visually on the right of the main image */
+  left: 380px;
+  top: 50%;
+
+  transform: translateY(-50%) translateX(20px);
+
+  /*   THIS FIXES THE “SKINNY COLUMN” PROBLEM */
+  width: 600px;
+  max-width: 40vw;
+
+  opacity: 0;
+  transition: opacity 0.5s ease, transform 0.5s ease;
+}
+
+.friend-gallery.hovered .friend-info {
+  opacity: 1;
+  transform: translateY(-50%) translateX(0);
+}
+
+/*   CLEAN TEXT FLOW */
+.friend-info h1 {
+  margin-bottom: 14px;
+  font-size: 40px;
+  line-height: 1.2;
+}
+
+.friend-info p {
+  opacity: 0.8;
+  line-height: 1.65;
+  font-size: 22px;
+  max-width: 100%;
+  white-space: normal;
+  word-break: normal;
+}

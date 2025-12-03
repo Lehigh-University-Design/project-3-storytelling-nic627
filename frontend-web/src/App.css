@@ -1,17 +1,30 @@
 body {
   margin: 0;
   font-family: serif;
+}
 
-  background: linear-gradient(
-    -45deg,
-    #b5e7ff,
-    #ffeef8,
-    #fbf2ff,
-    #feffef
-  );
+/*   NORMAL SOFT BACKGROUND */
+body.bg-normal {
+  background-image:
+    url("/images/holo4.jpg"),
+    linear-gradient(120deg, #e6f7ff, #fce4ec);
 
-  background-size: 400% 400%;
-  animation: gradientMove 18s ease infinite;
+  background-size: cover;
+  background-position: center;
+  background-repeat: no-repeat;
+  background-blend-mode: hue;
+}
+
+/*   DISTORTED / HUE BACKGROUND */
+body.bg-hue {
+  background-image:
+    url("/images/holo4.jpg"),
+    linear-gradient(120deg, #00aeff, #00ff6a);
+
+  background-size: cover;
+  background-position: center;
+  background-repeat: no-repeat;
+  background-blend-mode: hue;
 }
 
 
@@ -38,7 +51,7 @@ h1 {
   color: #555;
 }
 .chat-box {
-  background: white;
+  background: rgb(255, 255, 255);
   padding: 20px 30px;
   border-radius: 12px;
   margin-top: 30px;
@@ -135,25 +148,25 @@ button:active {
   0% {
     box-shadow:
       0px 10px 20px rgba(0, 0, 0, 0.12),
-      0px 0px 18px #f7ff85;   /* yellow */
+      0px 0px 10px #eeff00;   /* yellow */
   }
 
   33% {
     box-shadow:
       0px 10px 20px rgba(0, 0, 0, 0.12),
-      0px 0px 18px #96f8ff;   /* cyan */
+      0px 0px 10px #00eeff;   /* cyan */
   }
 
   66% {
     box-shadow:
       0px 10px 20px rgba(0, 0, 0, 0.12),
-      0px 0px 18px rgb(255, 123, 218);  /* pink */
+      0px 0px 10px rgb(255, 0, 183);  /* pink */
   }
 
   100% {
     box-shadow:
       0px 10px 20px rgba(0, 0, 0, 0.12),
-      0px 0px 18px #f7ff85;   /* yellow (loops cleanly) */
+      0px 0px 10px #eeff00;   /* yellow (loops cleanly) */
   }
 }
 
@@ -168,7 +181,7 @@ button:active {
   position: fixed;
   inset: 0;
 
-  background: #b00000;  /* ✅ HARD RED */
+  background: #b00000;  /*   HARD RED */
   overflow-y: auto;
   z-index: 99999;
 }
@@ -176,7 +189,7 @@ button:active {
 /* Full-screen warning panels */
 .danger-panel {
   height: 100vh;
-  background: red;
+  background: #b00000;
 
   display: flex;
   align-items: center;
@@ -214,30 +227,69 @@ button:active {
 }
 
 
-/*Toggle Button*/
+/* ================================
+   PURE CSS SWITCH (NO TAILWIND)
+   ================================ */
+
 .dev-toggle {
   position: fixed;
-  top: 12px;
-  right: 12px;
+  top: 20px;
+  right: 20px;
+  z-index: 999999;
+  display: flex;
+  align-items: center;
+  gap: 10px;
+  font-family: sans-serif;
+}
 
-  padding: 10px 16px;
-  font-size: 13px;
-  border-radius: 12px;
-  border: none;
-
-  background: black;
+.toggle-label {
   color: white;
+  font-size: 14px;
+}
+
+.toggle-switch {
+  position: relative;
+  width: 50px;
+  height: 26px;
+}
+
+.toggle-switch input {
+  opacity: 0;
+  width: 0;
+  height: 0;
+}
+
+.slider {
+  position: absolute;
+  inset: 0;
+  background-color: #edd32e;
+  background-image:
+    url("/images/holo4.jpg"),
+    linear-gradient(120deg, #e6f7ff, #fce4ec);
+    background-blend-mode: hue;
+
+  border-radius: 30px;
   cursor: pointer;
-
-  z-index: 999999999;     /* 🚨 ABOVE EVERYTHING */
-  pointer-events: auto;  /* 🚨 FORCE CLICKABLE */
+  transition: 0.3s;
 }
 
-
-.dev-toggle:hover {
-  background: rgba(0, 0, 0, 0.8);
+.slider::before {
+  content: "";
+  position: absolute;
+  height: 20px;
+  width: 20px;
+  left: 3px;
+  top: 3px;
+  background-color: white;
+  border-radius: 50%;
+  transition: 0.3s;
 }
 
-* {
-  pointer-events: auto;
+.toggle-switch input:checked + .slider {
+  background-color: #ffffff;
+}
+
+.toggle-switch input:checked + .slider::before {
+  transform: translateX(24px);
+  background-color: #b00000
 }
